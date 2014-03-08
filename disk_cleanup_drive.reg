@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Drive\shell\Disk Cleanup]
+"icon"="cleanmgr.exe"
+[HKEY_CLASSES_ROOT\Drive\shell\Disk Cleanup\command]
+@="cleanmgr.exe /d %1"

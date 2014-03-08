@@ -1,0 +1,32 @@
+Windows Registry Editor Version 5.00
+
+;Add Hide and Unhide to Context Menu
+[HKEY_CLASSES_ROOT\*\shell\Hidden File Attributes]
+"SubCommands"="Hide;Unhide"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Hide]
+@="Hide Only Selected Folder(s) and/or File(s)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Hide\command]
+@="attrib +h \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Unhide]
+@="Unhide Only Selected Folder(s) and/or File(s)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Unhide\command]
+@="attrib -h \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\Hidden Folder Attributes]
+"SubCommands"="Hide;Hide-all;Unhide;Unhide-all"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Hide-all]
+@="Hide Only Subfolders and Files in Selected Folder(s)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Hide-all\command]
+@="attrib +h \"%1\\*\" /S /D"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Unhide-all]
+@="Unhide Only Subfolders and Files in Selected Folder(s)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Unhide-all\command]
+@="attrib -h \"%1\\*\" /S /D"
